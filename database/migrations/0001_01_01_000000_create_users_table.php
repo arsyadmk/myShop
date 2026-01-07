@@ -17,11 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->char('role', length: 1)->default(3)->comment('0=admin_super, 1=admin, 2=cashier');
-            $table->foreignId('store_id')->nullable()->constrained(
-                table: 'stores',
-                indexName: 'user_store_id'
-            );
             $table->rememberToken();
             $table->timestamps();
         });

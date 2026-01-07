@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->char('type', length: 1)->default(0)->comment('0=pusat, 1=cabang, 2=retail');
             $table->timestamps();
         });
     }
